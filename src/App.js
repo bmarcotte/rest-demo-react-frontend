@@ -5,11 +5,11 @@ import BookmarkModal from './components/BookmarkModal';
 
 class App extends Component {
   reload_bookmark_list() {
-    this.refs.bookmark_list.reload();
+    this.bookmark_list.reload();
   }
 
   show_bookmark_modal( action, which ) {
-    this.refs.bookmark_modal.handleShow( action, which );
+    this.bookmark_modal.handleShow( action, which );
   }
 
   render() {
@@ -22,11 +22,11 @@ class App extends Component {
         <div className="App-Bookmarks">
           <h2>Bookmarks:</h2>
           <BookmarkList
-            ref="bookmark_list"
+            ref={ ( component ) => { this.bookmark_list = component; } }
             show_bookmark_modal={ this.show_bookmark_modal.bind( this ) }
           />
           <BookmarkModal
-            ref="bookmark_modal"
+            ref={ ( component ) => { this.bookmark_modal = component; } }
             reload_bookmark_list={ this.reload_bookmark_list.bind( this ) }
           />
         </div>
