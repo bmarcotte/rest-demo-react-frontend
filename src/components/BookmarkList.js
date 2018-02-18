@@ -17,7 +17,9 @@ class BookmarkList extends Component {
       isLoading: true,
       data:      null
     }
+    this.mounted = false;
 
+    this.loaded = this.loaded.bind( this );
     this.reload = this.reload.bind( this );
   }
 
@@ -26,7 +28,23 @@ class BookmarkList extends Component {
   }
 
   componentDidMount() {
+    this.mounted = true;
     this.reload();
+  }
+
+  componentWillUnmount() {
+    this.mounted = false;
+  }
+
+  loaded ( responseJson ) {
+    if ( ! this.mounted ) {
+      return;
+    }
+
+    this.setState( {
+      isLoading: false,
+      data:      responseJson
+    } );
   }
 
   reload() {
@@ -36,12 +54,7 @@ class BookmarkList extends Component {
     } );
 
     return BookmarkAPI.get_all_bookmarks(
-      ( responseJson ) => {
-        this.setState( {
-          isLoading: false,
-          data:      responseJson
-        } );
-      },
+      this.loaded,
       ( error ) => {
         console.error( error );
       }
