@@ -23,6 +23,7 @@ class BookmarkModal extends Component {
     return {
       action:   null,
       error:    null,
+      disabled: false,
       id:       0,
       name:     '',
       response: null,
@@ -58,6 +59,9 @@ class BookmarkModal extends Component {
     const success_handler = ( responseJson ) => {
       this.setState( {
         response: responseJson
+      } );
+      this.setState( {
+        disabled: true
       } );
       this.props.reload_bookmark_list();
     };
@@ -185,7 +189,13 @@ class BookmarkModal extends Component {
         </Modal.Body>
         <Modal.Footer>
           {this.get_status()}
-          <Button onClick={ this.handleSubmit.bind( this ) } type="submit">{submit_name}</Button>
+          <Button
+            onClick={ this.handleSubmit.bind( this ) }
+            disabled={this.state.disabled}
+            type="submit"
+          >
+            {submit_name}
+          </Button>
           <Button onClick={this.handleClose}>Close</Button>
         </Modal.Footer>
       </Modal>
