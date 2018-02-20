@@ -2,7 +2,13 @@ import fetch from 'isomorphic-fetch'
 
 class BookmarkAPI {
   static base_url () {
-    return 'http://localhost:8080/rest';
+    const path = '/rest';
+
+    if ( process.env.BROWSER ) {
+      return path;
+    }
+
+    return 'http://localhost:3000' + path;
   }
 
   static add_bookmark( request_args, success_handler, error_handler ) {
