@@ -8,6 +8,7 @@ import {
 } from 'react-bootstrap';
 import BookmarkAPI from './BookmarkAPI';
 import './BookmarkList.css';
+import PropTypes from 'prop-types';
 
 class BookmarkList extends Component {
   constructor( props ) {
@@ -16,7 +17,7 @@ class BookmarkList extends Component {
     this.state = {
       isLoading: true,
       data:      null
-    }
+    };
     this.mounted = false;
 
     this.loaded = this.loaded.bind( this );
@@ -85,7 +86,7 @@ class BookmarkList extends Component {
     return (
       <ListGroup>
         {
-          bookmarks.map( ( bookmark, index ) =>
+          bookmarks.map( ( bookmark ) =>
             <ListGroupItem
               key={bookmark.id}
               id={ 'lgi' + bookmark.id }
@@ -115,5 +116,9 @@ class BookmarkList extends Component {
     );
   }
 }
+
+BookmarkList.propTypes = {
+  show_bookmark_modal: PropTypes.func.isRequired
+};
 
 export default BookmarkList;

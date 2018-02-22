@@ -1,8 +1,10 @@
 const express = require( 'express' );
-const package = require( './package' );
+const pkg     = require( './package' );
 const path    = require( 'path' );
 const proxy   = require( 'express-http-proxy' );
 const app     = express();
+
+/* global __dirname process */
 
 app.use(
   express.static( path.join( __dirname, 'build' ) )
@@ -14,13 +16,13 @@ app.get( '/', function ( req, res ) {
   );
 } );
 
-if ( typeof package.proxy !== 'undefined' ) {
-  for ( var proxy_path in package.proxy ) {
-    if ( ! package.proxy.hasOwnProperty( proxy_path ) ) {
+if ( typeof pkg.proxy !== 'undefined' ) {
+  for ( var proxy_path in pkg.proxy ) {
+    if ( ! pkg.proxy.hasOwnProperty( proxy_path ) ) {
       continue;
     }
 
-    const proxy_config = package.proxy[ proxy_path ];
+    const proxy_config = pkg.proxy[ proxy_path ];
 
     let target;
     if ( proxy_config.hasOwnProperty( 'target-prod' ) ) {

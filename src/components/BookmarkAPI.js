@@ -1,4 +1,6 @@
-import fetch from 'isomorphic-fetch'
+/* global process */
+
+import fetch from 'isomorphic-fetch';
 
 class BookmarkAPI {
   static base_url () {
@@ -68,9 +70,9 @@ class BookmarkAPI {
     const url = this.base_url() + path;
 
     return fetch( url, options )
-    .then( ( response ) => response.json() )
-    .then( success_handler )
-    .catch( error_handler );
+      .then( ( response ) => response.json() )
+      .then( success_handler )
+      .catch( error_handler );
   }
 }
 

@@ -8,6 +8,7 @@ import {
 } from 'react-bootstrap';
 import BookmarkAPI from './BookmarkAPI';
 import './BookmarkModal.css';
+import PropTypes from 'prop-types';
 
 class BookmarkModal extends Component {
   constructor( props, context ) {
@@ -117,7 +118,9 @@ class BookmarkModal extends Component {
 
     if ( typeof response !== 'undefined' && response !== null ) {
       if ( typeof response.rows_affected !== 'undefined' && response.rows_affected > 0 ) {
-        setTimeout( () => { this.handleClose() }, 1000 );
+        setTimeout( () => {
+          this.handleClose();
+        }, 1000 );
         return (
           <div className="BookmarkModal-status">Saved!</div>
         );
@@ -202,5 +205,9 @@ class BookmarkModal extends Component {
     );
   }
 }
+
+BookmarkModal.propTypes = {
+  reload_bookmark_list: PropTypes.func.isRequired
+};
 
 export default BookmarkModal;

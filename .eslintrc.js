@@ -27,6 +27,10 @@ module.exports = {
             "error",
             "unix"
         ],
+        "no-console": [
+          "error",
+          { "allow": [ "warn", "error" ] }
+        ],
         "quotes": [
             "error",
             "single"
