@@ -8,7 +8,25 @@ class BookmarkAPI {
       return path;
     }
 
-    return 'http://localhost:3000' + path;
+    let protocol;
+    let host_port;
+    if ( typeof window !== 'undefined' ) {
+      protocol  = window.location.protocol;
+      host_port = window.location.host;
+    }
+
+    protocol = protocol  || 'http:';
+    if ( ! protocol.includes( ':' ) ) {
+      protocol = protocol + ':';
+    }
+
+    const port = process.env.PORT || 3000;
+    host_port = host_port || 'localhost:' + port;
+    if ( ! host_port.includes( ':' ) ) {
+      host_port = host_port + ':' + port;
+    }
+
+    return protocol + '//' + host_port + path;
   }
 
   static add_bookmark( request_args, success_handler, error_handler ) {
