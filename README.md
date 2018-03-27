@@ -14,7 +14,20 @@ There are configuration files in this repository to support installing and deplo
 methods.  Following the instructions for any one of these methods should setup a local running instance of this
 application.
 
-### Method 1: Using Docker (preferred)
+### Method 1: Using Docker & docker-compose (preferred)
+
+The easiest way to try out the code in this repository is via the docker-compose method described in the README for the
+main rest-demo project:
+* [README.md: Method 1: Using Docker & docker-compose (preferred)](https://github.com/bmarcotte/rest-demo/blob/master/README.md#method-1-using-docker--docker-compose-preferred)
+
+To request this frontend specifically, make sure your docker-compose command is prefixed with `FRONTEND=react`, like so:
+```
+> FRONTEND=react docker-compose up -d --build
+```
+
+For more details, please see the "Method 1" section in the README link above.
+
+### Method 2: Using Docker without docker-compose
 
 Requirements:
 * [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - version 1.7.10 or later recommended
@@ -33,7 +46,7 @@ container named `bookmarkapi`, with port 8080 mapped.
 Please see the [Backend(s)](https://github.com/bmarcotte/rest-demo#backends) section of the main rest-demo project
 README for more information.
 
-### Method 2: Using node and npm
+### Method 3: Using node and npm
 
 Requirements:
 * [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - version 1.7.10 or later recommended
