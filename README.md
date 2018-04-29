@@ -10,7 +10,7 @@ of all available frontends and backends, please visit the following repo:
 
 ## Installation and Deployment
 
-There are configuration files in this repository to support installing and deploying this code through two different
+There are configuration files in this repository to support installing and deploying this code through three different
 methods.  Following the instructions for any one of these methods should setup a local running instance of this
 application.
 
