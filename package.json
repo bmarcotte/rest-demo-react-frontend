@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "express": "^4.13.3",
-    "express-http-proxy": "^1.1.0",
-    "react": "^16.2.0",
-    "react-bootstrap": "^0.32.1",
-    "react-dom": "^16.2.0",
-    "react-scripts": "1.1.4"
+    "express": "^4.16.4",
+    "express-http-proxy": "^1.4.0",
+    "isomorphic-fetch": "^2.2.1",
+    "react": "^16.5.2",
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^16.5.2",
+    "react-scripts": "^1.1.5"
   },
   "scripts": {
     "start-dev": "NODE_ENV=development react-scripts start",
@@ -19,8 +20,8 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "eslint": "^4.18.0",
-    "eslint-plugin-react": "^7.6.1"
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.11.1"
   },
   "proxy": {
     "/rest": {
