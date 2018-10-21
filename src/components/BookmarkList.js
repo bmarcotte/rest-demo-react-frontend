@@ -92,7 +92,7 @@ class BookmarkList extends Component {
               id={ 'lgi' + bookmark.id }
             >
               <div className="list-group-item-text">
-                <a href={ encodeURI( bookmark.url ) } target="_blank">{bookmark.name}</a>
+                <a href={ encodeURI( bookmark.url ) } target="_blank" rel="noopener noreferrer">{bookmark.name}</a>
                 <ButtonGroup className="BookmarkList-add-edit-bg">
                   <Button bsSize="xsmall" onClick={ this.show_modal.bind( this, 'Edit', bookmark ) }>
                     <Glyphicon glyph="pencil" />
