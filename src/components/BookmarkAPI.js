@@ -1,5 +1,3 @@
-/* global process */
-
 import fetch from 'isomorphic-fetch';
 
 class BookmarkAPI {
