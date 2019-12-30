@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start-dev": "NODE_ENV=development react-scripts start",
-    "start": "NODE_ENV=production node server.js",
+    "start": "NODE_ENV=production react-scripts start",
     "build": "react-scripts build",
     "lint": "eslint --ignore-pattern 'build/' --ext .js .",
     "test": "react-scripts test --env=jsdom",
