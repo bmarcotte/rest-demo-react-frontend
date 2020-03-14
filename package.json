@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "acorn": "^6.3.0",
+    "acorn": "^6.4.1",
     "ajv": "^6.10.2",
     "express": "^4.17.1",
     "express-http-proxy": "^1.6.0",
