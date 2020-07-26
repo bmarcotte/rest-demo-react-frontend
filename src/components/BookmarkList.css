@@ -1,3 +1,13 @@
-.BookmarkList-add-edit-bg {
-  float: right;
+.list-group-item-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Bookmark-name {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.BookmarkList-add-edit-bg > button {
+  padding: 0.125rem 0.75rem;
 }

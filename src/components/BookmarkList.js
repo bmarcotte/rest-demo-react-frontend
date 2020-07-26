@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   Button,
   ButtonGroup,
-  Glyphicon,
   ListGroup,
   ListGroupItem
 } from 'react-bootstrap';
@@ -84,7 +84,7 @@ class BookmarkList extends Component {
     }
 
     return (
-      <ListGroup>
+      <ListGroup className="list-group-flush">
         {
           bookmarks.map( ( bookmark ) =>
             <ListGroupItem
@@ -92,13 +92,18 @@ class BookmarkList extends Component {
               id={ 'lgi' + bookmark.id }
             >
               <div className="list-group-item-text">
-                <a href={ encodeURI( bookmark.url ) } target="_blank" rel="noopener noreferrer">{bookmark.name}</a>
+                <a
+                  href={ encodeURI( bookmark.url ) }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="Bookmark-name"
+                  >{bookmark.name}</a>
                 <ButtonGroup className="BookmarkList-add-edit-bg">
-                  <Button bsSize="xsmall" onClick={ this.show_modal.bind( this, 'Edit', bookmark ) }>
-                    <Glyphicon glyph="pencil" />
+                  <Button size="xs" onClick={ this.show_modal.bind( this, 'Edit', bookmark ) }>
+                    <FontAwesomeIcon icon="edit" size="xs" />
                   </Button>
-                  <Button bsSize="xsmall" onClick={ this.show_modal.bind( this, 'Delete', bookmark ) }>
-                    <Glyphicon glyph="trash" />
+                  <Button size="xs" onClick={ this.show_modal.bind( this, 'Delete', bookmark ) }>
+                    <FontAwesomeIcon icon="trash" size="xs" />
                   </Button>
                 </ButtonGroup>
               </div>
@@ -107,8 +112,8 @@ class BookmarkList extends Component {
         }
         <ListGroupItem key={0} id={ 'lgiadd' }>
           <ButtonGroup>
-            <Button bsSize="small" onClick={ this.show_modal.bind( this, 'Add', null ) }>
-              <Glyphicon glyph="plus" /> Add new bookmark
+            <Button size="sm" onClick={ this.show_modal.bind( this, 'Add', null ) }>
+              <FontAwesomeIcon icon="plus" size="xs" /> Add new bookmark
             </Button>
           </ButtonGroup>
         </ListGroupItem>

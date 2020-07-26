@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   Button,
-  ControlLabel,
+  FormLabel,
   FormControl,
   FormGroup,
   Modal
@@ -160,7 +160,7 @@ class BookmarkModal extends Component {
           <form>
             <input type="hidden" name="id" value={id} />
             <FormGroup controlId="formName">
-              <ControlLabel>Name</ControlLabel>
+              <FormLabel>Name</FormLabel>
               { action === 'Delete' ? (
                 <FormControl.Static>{name}</FormControl.Static>
               ) : (
@@ -175,7 +175,7 @@ class BookmarkModal extends Component {
             </FormGroup>
 
             <FormGroup controlId="formURL">
-              <ControlLabel>URL</ControlLabel>
+              <FormLabel>URL</FormLabel>
               { action === 'Delete' ? (
                 <FormControl.Static>{url}</FormControl.Static>
               ) : (
