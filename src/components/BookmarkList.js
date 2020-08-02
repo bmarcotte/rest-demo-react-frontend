@@ -97,7 +97,7 @@ class BookmarkList extends Component {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="Bookmark-name"
-                  >{bookmark.name}</a>
+                >{bookmark.name}</a>
                 <ButtonGroup className="BookmarkList-add-edit-bg">
                   <Button size="xs" onClick={ this.show_modal.bind( this, 'Edit', bookmark ) }>
                     <FontAwesomeIcon icon="edit" size="xs" />
