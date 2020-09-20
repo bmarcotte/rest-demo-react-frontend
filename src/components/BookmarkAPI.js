@@ -1,5 +1,3 @@
-import fetch from 'isomorphic-fetch';
-
 class BookmarkAPI {
   static base_url () {
     const path = '/rest';
