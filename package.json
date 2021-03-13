@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "eslint": "^7.15.0",
-    "react-scripts": "4.0.1"
+    "react-scripts": "4.0.3"
   },
   "browserslist": [
     ">0.2%",
