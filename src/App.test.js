@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import App from './App';
 import BookmarkAPI from './components/BookmarkAPI';
@@ -14,7 +14,8 @@ describe('App', () => {
 
   test('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<App />, div);
-    ReactDOM.unmountComponentAtNode(div);
+    const root = createRoot(div);
+    root.render(<App />);
+    root.unmount();
   });
 });
